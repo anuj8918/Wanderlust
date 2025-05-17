@@ -1,8 +1,8 @@
-.body{
-    font-family: 'Plus Jakarta Sans', sans-serif !important;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+body{
+font-family: 'Plus Jakarta Sans', sans-serif !important;
+display: flex;
+flex-direction: column;
+min-height: 100vh;
 }
 
 .container{
@@ -23,40 +23,41 @@
     color: #222222 !important;
 }
 
-/* Footer */
 .f-info-links a{
     text-decoration: none;
     color: #222222;
-    margin-left: 5px;
 }
 
 .f-info-links a:hover{
     text-decoration: underline;
 }
 
-.f-info-links, .f-info-socials, .f-info-brand{
-    width: 100% !important;
+.f-info-links, .f-info-socials
+,.f-info-brand{
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
+
 .f-info-socials i{
+    margin: 1rem;
     font-size: 1.2rem;
-    margin-right: 1rem;
 }
 
 .f-info{
     text-align: center;
+    display: flex;
     height: 8rem;
     background-color: #ebebeb;
-    display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: space-evenly;
 }
 
 /* cards */
+
 .listing-card{
     border: none !important;
     margin-bottom: 2rem;
@@ -69,7 +70,7 @@
 }
 
 .card-body{
-    padding: 0 !important;
+    padding:0 !important;
 }
 
 .card-text p{
@@ -80,50 +81,44 @@
     text-decoration: none;
 }
 
-/* card effect */
 .card-img-overlay{
     opacity: 0;
 }
+
 .card-img-overlay:hover{
     opacity: 0.2;
     background-color: white;
 }
 
-/* New Page */
+/* new page */
 .add-btn{
     background-color: #fe424d !important;
     border: none !important;
 }
 
-/* edit page */
+/* Edit page */
 .edit-btn{
     background-color: #fe424d !important;
     border: none !important;
-    /* margin-right: 30px; */
 }
 
-.btns {
-    display: flex; /* Use flexbox layout */
-    align-items: center; /* Align items vertically in the center */
-}
-
-/* .btns .btn {
-    margin-right: 2px; /* Add some right margin to create space between buttons */
-*/
-
-
-/* Show Page */
+/* show page */
 .show-img{
     height: 30vh;
 }
 
-.show-card{
+.btns{
+    display: flex;
+}
+
+.show-img{
     padding-left: 0;
     padding-right: 0;
 }
 
-/* Map */
-#map {
+/* map */
+
+#map{
     height: 400px;
-    width: 100vh;
+    width: 80vh;
 }

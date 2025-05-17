@@ -49,26 +49,12 @@ module.exports.validateReview = (req,res,next) =>{
     }
 };
 
-module.exports.isReviewAuthor = async (req, res, next) => {
-    try {
-        if (!req.isAuthenticated()) { // Check if user is authenticated
-            req.flash("error", "You must be logged in to perform this action.");
-            return res.redirect("/login");
-        }
-        const { id, reviewId } = req.params;
-        const review = await Review.findById(reviewId).populate('author');
-        if (!review || !review.author) {
-            req.flash("error", "Review or author not found.");
-            return res.redirect(`/listings/${id}`);
-        }
-        if (!review.author.equals(req.user._id)) {
-            req.flash("error", "You are not the author of this review!");
-            return res.redirect(`/listings/${id}`);
-        }
-        next();
-    } catch (err) {
-        console.error(err);
-        req.flash("error", "An error occurred while fetching the review.");
-        res.redirect(`/listings/${id}`);
+module.exports.isReviewAuthor =async (req,res,next) =>{
+    let {id,reviewId} = req.params;
+    let listing = await Review.findById(reviewId);
+    if(!review.author.equals(res.locals.currUser._id)){
+        req.flash("error","You are not the owner of this review");
+        return res.redirect(`/listings/${id}`);
     }
+    next();
 };
